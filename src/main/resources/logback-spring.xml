@@ -7,7 +7,43 @@
                     </pattern>
             </layout>
     </appender>
+    <appender name="fileinfoLog" class="ch.qos.logback.core.rolling.RollingFileAppender" >
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>DENY</onMatch>
+            <onMismatch>ACCEPT</onMismatch>
+        </filter>
+        <encoder>
+           <pattern>
+               %d -----%msg%n
+           </pattern>
+        </encoder>
+        <!-- 滚动策略 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>D:\logs\shell.%d.log</fileNamePattern>
+        </rollingPolicy>
+    </appender>
+
+
+    <appender name="errorLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--error文件中 有别的信息  过滤出来error-->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+
+        </filter>
+        <encoder>
+            <pattern>
+                %d-----%msg%n
+            </pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>D:\logs\error.%d.log</fileNamePattern>
+        </rollingPolicy>
+
+    </appender>
     <root  level="info">
         <appender-ref ref="consoleLog"/>
+        <appender-ref ref="fileinfoLog"/>
+        <appender-ref ref="errorLog"/>
     </root>
 </configuration>
