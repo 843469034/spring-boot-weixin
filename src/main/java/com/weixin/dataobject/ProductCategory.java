@@ -6,12 +6,15 @@ package com.weixin.dataobject;
 
 import lombok.Data;
 import org.hibernate.annotations.DynamicUpdate;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import  java.util.Date;
 /**
  *
  */
+@Component
 @Entity
 @Table(name = "product_category")
 @DynamicUpdate

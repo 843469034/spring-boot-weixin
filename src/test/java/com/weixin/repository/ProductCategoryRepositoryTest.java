@@ -55,12 +55,12 @@ public class ProductCategoryRepositoryTest {
               productCategory.setCategoryName("哈哈-----");
               productCategoryRepository.save(productCategory);*/
           }
-       /* @Test
+      @Test
         public void testImplselect(){
             List<Integer> i = Arrays.asList(0,1,2);
             // List<ProductCategory>  productCategories=productCategoryRepository.findByCategory_typeIn(i);
-            List<ProductCategory>  productCategories1  = productCategoryRepository.findByCategoryType(2);
+            List<ProductCategory>  productCategories1  = productCategoryRepository.findByCategory_typeIn(i);
            log.info("result:{}",productCategories1.toString());
 
-        }*/
+        }
 }
