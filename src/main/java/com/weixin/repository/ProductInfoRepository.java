@@ -13,4 +13,7 @@ public interface ProductInfoRepository extends JpaRepository<ProductInfo,String>
 
     @Query(nativeQuery = true,value = "select  * from product_info where product_status = ?1 ")
     List<ProductInfo>  findByProductStatus(Integer productStatus);
+
+
+    List<ProductInfo>  findAllByProductName(List<String> productName);
 }

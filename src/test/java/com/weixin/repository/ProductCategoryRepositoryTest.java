@@ -1,6 +1,7 @@
 package com.weixin.repository;
 
 import com.weixin.dataobject.ProductCategory;
+import com.weixin.dataobject.ProductInfo;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -27,6 +28,9 @@ import static org.junit.Assert.*;
 public class ProductCategoryRepositoryTest {
         @Autowired
         private  ProductCategoryRepository productCategoryRepository;
+
+        @Autowired
+        private  ProductInfoRepository productInfoRepository;
 
         @Test
         public  void findObject(){
@@ -63,4 +67,13 @@ public class ProductCategoryRepositoryTest {
            log.info("result:{}",productCategories1.toString());
 
         }
+
+        @Test
+    public  void  testName(){
+            List<String> list = Arrays.asList("哈哈");
+            List<ProductInfo> list1 = productInfoRepository.findAllByProductName(list);
+            log.info("list:{}",list1);
+
+        }
+
 }
