@@ -8,7 +8,9 @@ spring:
     show-sql: true
 
 server:
-    context-path: /shell
+    port: 8080
+    servlet:
+     context-path: /shell
 #logging:
 #  pattern:
 #    console: "%d  ----------  %msg%n"
