@@ -7,6 +7,7 @@ import com.weixin.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,6 +15,7 @@ import java.util.Optional;
 /**
  * Created by Administrator on 2018/11/23.
  */
+@Service
 public class ProductServiceImpl implements ProductService {
     @Autowired
     private ProductInfoRepository productInfoRepository;
