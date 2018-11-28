@@ -1,6 +1,7 @@
 package com.weixin.service;
 
 import com.weixin.dataobject.ProductInfo;
+import com.weixin.dto.CartDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -20,8 +21,9 @@ public interface ProductService {
     ProductInfo save(ProductInfo productInfo);
 
     //加库存
-
+    void increaseStock(List<CartDTO> listCartDto);
 
 
     //减库存
+    void decreaseStock(List<CartDTO> listCartDto);
 }
